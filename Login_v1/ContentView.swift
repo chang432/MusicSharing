@@ -12,7 +12,7 @@ import GoogleSignIn
 import MapKit
 
 struct ContentView: View {
-    
+    // This is a content view
     @State var status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
     
     var body: some View {
