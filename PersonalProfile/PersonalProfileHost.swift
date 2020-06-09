@@ -13,6 +13,7 @@ struct PersonalProfileHost: View {
     @EnvironmentObject var userData: UserData
     @State var draftProfile = Profile.default
     
+    @ObservedObject private var viewModel = ProfileViewModel()
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -33,12 +34,13 @@ struct PersonalProfileHost: View {
             if self.mode?.wrappedValue == .inactive {
                 PersonalProfileSummary(personalProfile: userData.profile)
             } else {
-                PersonalProfileEditor(profile: $draftProfile)
+                PersonalProfileEditor(personalProfile: $draftProfile)
                 .onAppear {
                     self.draftProfile = self.userData.profile
                 }
                 .onDisappear {
                     self.userData.profile = self.draftProfile
+                    self.viewModel.addData(self.userData.profile)
                 }
             }
         }.padding()
@@ -47,6 +49,7 @@ struct PersonalProfileHost: View {
 
 struct PersonalProfileHost_Previews: PreviewProvider {
     static var previews: some View {
-        PersonalProfileHost()
+        PersonalProfileHost().environmentObject(UserData())
     }
 }
+

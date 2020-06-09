@@ -25,12 +25,11 @@ struct PersonalProfileSummary: View {
             Text("Gender: \(self.personalProfile.gender)")
                 .padding()
             
-            VStack {
+            VStack(alignment: .leading) {
                 Text("Favorite Songs").font(.headline)
                 Text("Top 1: \(self.personalProfile.favsong1)").font(.subheadline)
                 Text("Top 2: \(self.personalProfile.favsong2)").font(.subheadline)
                 Text("Top 3: \(self.personalProfile.favsong3)").font(.subheadline)
-
             }.padding()
             
         }
@@ -42,3 +41,4 @@ struct PersonalProfileSummary_Previews: PreviewProvider {
         PersonalProfileSummary(personalProfile: Profile.default)
     }
 }
+

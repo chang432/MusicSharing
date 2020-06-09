@@ -327,6 +327,19 @@ func signUpWithEmail(email: String, password: String, completion: @escaping(Bool
 struct Home: View {
     @State var manager = CLLocationManager()
     @State var alert = false
+    @EnvironmentObject var userData: UserData
+    @State var showingProfile = false
+
+    
+    
+    var profileButton: some View {
+        Button(action: { self.showingProfile.toggle() }) {
+            Image(systemName: "person.crop.circle")
+                .imageScale(.large)
+                .accessibility(label: Text("User Profile"))
+                .padding()
+        }
+    }
     
     var body: some View {
         NavigationView {
@@ -349,7 +362,7 @@ struct Home: View {
                 
                 HStack{
                     
-                    NavigationLink(destination: LeftView()) {
+                    NavigationLink(destination: PersonalProfileHost().environmentObject(self.userData)) {
                         Image("leftarrow").renderingMode(.original).resizable().frame(width: 40, height: 30).padding()
                     }
                     
@@ -361,6 +374,10 @@ struct Home: View {
             
                 
             }.navigationBarTitle(Text("Home"),displayMode: .inline).background(Color.gray)
+            .navigationBarItems(trailing: profileButton)
+            .sheet(isPresented: $showingProfile) {
+                PersonalProfileHost().environmentObject(self.userData)
+            }
             
             
             

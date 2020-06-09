@@ -15,7 +15,9 @@ class ProfileViewModel : ObservableObject {
     private var db = Firestore.firestore()
     
     func fetchData() {
-        db.collection("Profiles").addSnapshotListener { (querySnapshot, error) in
+        db.collection("Profiles")
+        .order(by: "createdTime")
+            .addSnapshotListener { (querySnapshot, error) in
             guard let documents = querySnapshot?.documents else {
                 print("No documents")
                 return
@@ -35,5 +37,16 @@ class ProfileViewModel : ObservableObject {
             }
         }
     }
+    
+    func addData(_ profile: Profile) {
+        do {
+            let _ = try db.collection("Profiles").addDocument(from: profile)
+        }
+        catch {
+            fatalError("Unable to encode profile: \(error.localizedDescription)")
+        }
+    }
+    
+    
     
 }
