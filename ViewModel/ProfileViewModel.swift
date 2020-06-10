@@ -7,7 +7,9 @@
 //
 
 import Foundation
+import Firebase
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class ProfileViewModel : ObservableObject {
     @Published var profiles = [Profile]()
@@ -15,8 +17,10 @@ class ProfileViewModel : ObservableObject {
     private var db = Firestore.firestore()
     
     func fetchData() {
+        let userId = Auth.auth().currentUser?.uid
         db.collection("Profiles")
         .order(by: "createdTime")
+            .whereField("userId", isEqualTo: userId)
             .addSnapshotListener { (querySnapshot, error) in
             guard let documents = querySnapshot?.documents else {
                 print("No documents")
@@ -40,7 +44,9 @@ class ProfileViewModel : ObservableObject {
     
     func addData(_ profile: Profile) {
         do {
-            let _ = try db.collection("Profiles").addDocument(from: profile)
+            var addedProfile = profile
+            addedProfile.userId = Auth.auth().currentUser?.uid
+            let _ = try db.collection("Profiles").addDocument(from: addedProfile)
         }
         catch {
             fatalError("Unable to encode profile: \(error.localizedDescription)")
