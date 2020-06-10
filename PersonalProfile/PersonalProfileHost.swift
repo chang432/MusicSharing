@@ -11,11 +11,15 @@ import SwiftUI
 struct PersonalProfileHost: View {
     @Environment(\.editMode) var mode
     @EnvironmentObject var userData: UserData
-    @State var draftProfile = Profile.default
-    
+     
     @ObservedObject private var viewModel = ProfileViewModel()
     
+    @State var draftProfile = Profile.default
+
     var body: some View {
+        //self.viewModel.fetchData()
+        //self.userData.profile = viewModel.profiles[1]?
+        
         VStack(alignment: .leading, spacing: 20) {
             
             HStack {
@@ -32,16 +36,46 @@ struct PersonalProfileHost: View {
                 EditButton()
             }
             if self.mode?.wrappedValue == .inactive {
-                PersonalProfileSummary(personalProfile: userData.profile)
+                PersonalProfileSummary(personalProfile: userData.profile).onAppear {
+                    self.viewModel.fetchData()
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // Change `2.0` to the desired number of seconds.
+                        // Code you want to be delayed
+                        
+                        if !self.viewModel.profiles[0].username.isEmpty {
+                            self.userData.profile = self.viewModel.profiles[0]
+                            //print("ahh crap")
+                        }
+                        self.draftProfile = self.userData.profile
+                    }
+                    
+                    print("profiles count: \(self.viewModel.profiles.count)")
+                }
             } else {
                 PersonalProfileEditor(personalProfile: $draftProfile)
-                .onAppear {
-                    self.draftProfile = self.userData.profile
+                    .onAppear {
+                        self.viewModel.fetchData()
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // Change `2.0` to the desired number of seconds.
+                            // Code you want to be delayed
+                            
+                            if !self.viewModel.profiles[0].username.isEmpty {
+                                self.userData.profile = self.viewModel.profiles[0]
+                                //print("ahh crap")
+                            }
+                            self.draftProfile = self.userData.profile
+                        }
+                        
+                        print("profiles count: \(self.viewModel.profiles.count)")
+                        //print(self.viewModel.profiles.first!.username)
                 }
                 .onDisappear {
                     self.userData.profile = self.draftProfile
+                    
+                    
                     self.viewModel.addData(self.userData.profile)
                 }
+            
             }
         }.padding()
     }

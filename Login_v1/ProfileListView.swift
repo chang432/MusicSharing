@@ -14,6 +14,7 @@ struct ProfileListView: View {
     
     var body: some View {
         NavigationView {
+            
             List(viewModel.profiles) { profile in
                 VStack(alignment: .leading) {
                     Text(profile.username).font(.headline)
@@ -25,7 +26,7 @@ struct ProfileListView: View {
             }
             .navigationBarTitle("Profiles")
             .onAppear() {
-                    self.viewModel.fetchData()
+                self.viewModel.fetchData()
             }
         }
     }

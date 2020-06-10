@@ -53,6 +53,18 @@ class ProfileViewModel : ObservableObject {
         }
     }
     
-    
-    
+    func updateData(_ profile: Profile) {
+        var profileID = ""
+        if !profile.id.isEmpty {
+            profileID = profile.id
+        }
+//        if let profileID = profile.id {
+            do {
+                try db.collection("Profiles").document(profileID).setData(from: profile)
+            }
+            catch {
+                fatalError("Unable to encode task: \(error.localizedDescription)")
+            }
+//        }
+   }
 }
