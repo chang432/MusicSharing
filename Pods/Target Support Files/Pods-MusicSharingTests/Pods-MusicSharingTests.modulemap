@@ -1,0 +1,6 @@
+framework module Pods_MusicSharingTests {
+  umbrella header "Pods-MusicSharingTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

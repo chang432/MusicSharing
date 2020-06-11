@@ -1,6 +1,0 @@
-framework module Pods_Login_v1_Login_v1UITests {
-  umbrella header "Pods-Login_v1-Login_v1UITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
