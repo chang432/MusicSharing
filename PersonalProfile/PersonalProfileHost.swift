@@ -72,8 +72,14 @@ struct PersonalProfileHost: View {
                 .onDisappear {
                     self.userData.profile = self.draftProfile
                     
-                    
-                    self.viewModel.addData(self.userData.profile)
+                    if !self.viewModel.profiles[0].username.isEmpty {
+                        self.viewModel.updateData(self.viewModel.profiles[0])
+                        print("user exist, update! (from Host)")
+                    }
+                    else {
+                        self.viewModel.addData(self.userData.profile)
+                        print("no user profile! (from Host)")
+                    }
                 }
             
             }

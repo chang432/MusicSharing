@@ -30,12 +30,14 @@ class ProfileViewModel : ObservableObject {
             self.profiles = documents.map { (queryDocumentSnapshot) -> Profile in
                 let data = queryDocumentSnapshot.data()
                 
+                //let id = data["id"] as? String ?? ""
                 let username = data["username"] as? String ?? ""
                 let gender = data["gender"] as? String ?? ""
                 let favsong1 = data["favsong1"] as? String ?? ""
                 let favsong2 = data["favsong2"] as? String ?? ""
                 let favsong3 = data["favsong3"] as? String ?? ""
-
+                //let userId = data["userId"] as? String ?? ""
+                
                 let profile = Profile(username: username, gender: gender, favsong1: favsong1, favsong2: favsong2, favsong3: favsong3)
                 return profile
             }
@@ -55,12 +57,17 @@ class ProfileViewModel : ObservableObject {
     
     func updateData(_ profile: Profile) {
         var profileID = ""
-        if !profile.id.isEmpty {
-            profileID = profile.id
+        print(profile.id)
+        if !profile.username.isEmpty {
+            profileID = profile.id!
+            print("not empty (inside)")
         }
 //        if let profileID = profile.id {
             do {
-                try db.collection("Profiles").document(profileID).setData(from: profile)
+                var updatedProfile = profile
+                updatedProfile.userId = Auth.auth().currentUser?.uid
+                try db.collection("Profiles").document(profileID).setData(from: updatedProfile)
+                print("update successful")
             }
             catch {
                 fatalError("Unable to encode task: \(error.localizedDescription)")
