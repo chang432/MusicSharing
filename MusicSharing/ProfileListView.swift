@@ -26,7 +26,12 @@ struct ProfileListView: View {
             }
             .navigationBarTitle("Profiles")
             .onAppear() {
-                self.viewModel.fetchData()
+                self.viewModel.fetchAllData()
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // Change `2.0` to the desired number of seconds.
+                    // Code you want to be delayed
+                    //print(self.viewModel.profiles[0].id)
+                }
             }
         }
     }
