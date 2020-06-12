@@ -136,6 +136,7 @@ struct bottomView : View {
         VStack{
             
             
+            
             Text("(or)").foregroundColor(Color.gray.opacity(0.5)).padding(.top, 20)
             
             GoogleSignView().frame(width: 150, height: 55)
