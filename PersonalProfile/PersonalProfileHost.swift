@@ -39,10 +39,10 @@ struct PersonalProfileHost: View {
                 PersonalProfileSummary(personalProfile: userData.profile).onAppear {
                     self.viewModel.fetchData()
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { // Change `2.0` to the desired number of seconds.
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // Change `2.0` to the desired number of seconds.
                         // Code you want to be delayed
                         
-                        if !self.viewModel.profiles[0].username.isEmpty {
+                        if !(self.viewModel.profiles.first?.username.isEmpty ?? true) {
                             self.userData.profile = self.viewModel.profiles[0]
                             //print("ahh crap")
                         }
@@ -56,10 +56,10 @@ struct PersonalProfileHost: View {
                     .onAppear {
                         self.viewModel.fetchData()
                         
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { // Change `2.0` to the desired number of seconds.
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // Change `2.0` to the desired number of seconds.
                             // Code you want to be delayed
                             
-                            if !self.viewModel.profiles[0].username.isEmpty {
+                            if !(self.viewModel.profiles.first?.username.isEmpty ?? true) {
                                 self.userData.profile = self.viewModel.profiles[0]
                                 //print("ahh crap")
                             }
@@ -72,9 +72,10 @@ struct PersonalProfileHost: View {
                 .onDisappear {
                     self.userData.profile = self.draftProfile
                     
-                    if !self.viewModel.profiles[0].username.isEmpty {
-                        self.viewModel.updateData(self.viewModel.profiles[0])
+                    if !(self.viewModel.profiles.first?.username.isEmpty ?? true) {
                         print("user exist, update! (from Host)")
+                        print(self.viewModel.profiles[0].id)
+                        self.viewModel.updateData(self.userData.profile)
                     }
                     else {
                         self.viewModel.addData(self.userData.profile)

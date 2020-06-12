@@ -14,7 +14,8 @@ import MapKit
 struct ContentView: View {
     // This is a content view
     @State var status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
-    
+    @ObservedObject private var viewModel = ProfileViewModel()
+
     var body: some View {
         
         VStack{
@@ -329,6 +330,7 @@ struct Home: View {
     @State var alert = false
     @EnvironmentObject var userData: UserData
     @State var showingProfile = false
+    @ObservedObject var viewModel = ProfileViewModel()
 
     
     
@@ -342,18 +344,19 @@ struct Home: View {
     }
     
     var body: some View {
+
         NavigationView {
             
             VStack {
                   
-                Button(action: {
-                    try! Auth.auth().signOut()
-                    GIDSignIn.sharedInstance()?.signOut()
-                    UserDefaults.standard.set(false, forKey: "status")
-                    NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
-                }){
-                    Text("Logout")
-                }.padding(.top,10)
+//                Button(action: {
+//                    try! Auth.auth().signOut()
+//                    GIDSignIn.sharedInstance()?.signOut()
+//                    UserDefaults.standard.set(false, forKey: "status")
+//                    NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
+//                }){
+//                    Text("Logout")
+//                }.padding(.top,10)
                 
                 MapView(manager: $manager, alert: $alert).alert(isPresented: $alert) {
                     
@@ -363,18 +366,33 @@ struct Home: View {
                 HStack{
                     
                     NavigationLink(destination: PersonalProfileHost().environmentObject(self.userData)) {
-                        Image("leftarrow").renderingMode(.original).resizable().frame(width: 40, height: 30).padding()
+                        Image("leftarrow").renderingMode(.original).resizable().frame(width: 40, height: 30).clipShape(Circle())
+                        .overlay(
+                            Circle().stroke(Color.black, lineWidth: 1)).padding()
                     }
                     
                     NavigationLink(destination: ProfileListView()) {
-                        Image("leftarrow").renderingMode(.original).resizable().frame(width: 40, height: 30).rotationEffect(Angle(degrees: 180)).padding()
+                        Image("leftarrow").renderingMode(.original).resizable().frame(width: 40, height: 30).rotationEffect(Angle(degrees: 180)).clipShape(Circle())
+                        .overlay(
+                            Circle().stroke(Color.black, lineWidth: 1)).padding()
                     }
                     
                 }.padding(.bottom,5)
             
                 
-            }.navigationBarTitle(Text("Home"),displayMode: .inline).background(Color.gray)
-            .navigationBarItems(trailing: profileButton)
+                }
+            .navigationBarTitle(Text("Home Page"),displayMode: .inline).background(Color.white)
+            //.navigationBarItems(trailing: profileButton)
+            .navigationBarItems(leading:
+                Button(action: {
+                    try! Auth.auth().signOut()
+                    GIDSignIn.sharedInstance()?.signOut()
+                    UserDefaults.standard.set(false, forKey: "status")
+                    NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
+                }){
+                    Text("Logout")
+                }.padding(.top,10), trailing: profileButton
+            )
             .sheet(isPresented: $showingProfile) {
                 PersonalProfileHost().environmentObject(self.userData)
             }

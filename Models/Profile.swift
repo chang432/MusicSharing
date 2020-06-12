@@ -11,8 +11,8 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 struct Profile: Codable, Identifiable {
-    //var id: String = UUID().uuidString
-    @DocumentID var id: String?
+    var id: String = UUID().uuidString
+    //@DocumentID var id: String?
     var username: String
     var gender: String
     var favsong1: String
