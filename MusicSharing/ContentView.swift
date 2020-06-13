@@ -10,6 +10,7 @@ import SwiftUI
 import Firebase
 import GoogleSignIn
 import MapKit
+import FirebaseStorage
 
 struct ContentView: View {
     // This is a content view
@@ -423,8 +424,8 @@ struct MapView: UIViewRepresentable {
     @Binding var alert: Bool
     let map = MKMapView()
     
-    func makeCoordinator() -> MapView.Coordinator {
-           return Coordinator(parent1: self)
+    func makeCoordinator() -> MapView.MapCoordinator {
+           return MapCoordinator(parent1: self)
        }
     
     func makeUIView(context: UIViewRepresentableContext<MapView>) -> MKMapView {
@@ -443,7 +444,7 @@ struct MapView: UIViewRepresentable {
         
     }
     
-    class Coordinator : NSObject,CLLocationManagerDelegate{
+    class MapCoordinator : NSObject,CLLocationManagerDelegate{
         
         var parent : MapView
         
@@ -485,6 +486,21 @@ struct MapView: UIViewRepresentable {
             }
         }
     }
+//
+//    struct imagePicker : UIViewControllerRepresentable {
+//
+//        func makeUIViewController(context: UIViewControllerRepresentable<imagePicker>) -> UIImagePickerController {
+//            let imagepic = UIImagePickerController()
+//            imagepic.sourceType = .photoLibrary
+//            return imagepic
+//        }
+//
+//        func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<imagePicker>) {
+//
+//        }
+//
+//    }
+    
 }
 
 

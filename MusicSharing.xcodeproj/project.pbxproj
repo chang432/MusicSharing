@@ -34,6 +34,7 @@
 		6DB23A972492BD90005BF22F /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB23A962492BD90005BF22F /* AppView.swift */; };
 		80401131AD91C32FD998595B /* Pods_MusicSharing_MusicSharingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BCFA5E5A3E2B3F2B2B3830D /* Pods_MusicSharing_MusicSharingUITests.framework */; };
 		CC914C47103E870727FFA471 /* Pods_MusicSharingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1CF78CF6475CA22B2BC7EA4 /* Pods_MusicSharingTests.framework */; };
+		FB5E5A20C75704665F5032CD /* Pods_MusicSharing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C50A8A3C9626573A4152AE33 /* Pods_MusicSharing.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D81FBBC2493FDC60000CC52 /* SpotifyiOS.framework in Frameworks */,
+				FB5E5A20C75704665F5032CD /* Pods_MusicSharing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -776,7 +778,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jasonidentifier.Login-v1";
 				PRODUCT_NAME = MusicSharing;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/andrechang/Desktop/MusicSharing-master/MusicSharing/MusicSharing-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jasonlkc/Documents/R&D/SwiftUI_tutorials/Login_v1/MusicSharing/MusicSharing-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -831,7 +833,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jasonidentifier.Login-v1";
 				PRODUCT_NAME = MusicSharing;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/andrechang/Desktop/MusicSharing-master/MusicSharing/MusicSharing-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jasonlkc/Documents/R&D/SwiftUI_tutorials/Login_v1/MusicSharing/MusicSharing-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
