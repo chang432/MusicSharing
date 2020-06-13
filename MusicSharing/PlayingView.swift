@@ -15,6 +15,27 @@ struct PlayingView: View {
     var body: some View {
         VStack {
             HStack {
+                
+                Button(action: goHome) {
+                    Text(" Back ")
+                        .foregroundColor(Color.purple)
+                        .padding()
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 15, style: .continuous)
+                            .stroke(Color.purple, style: StrokeStyle(lineWidth: 2))
+                        )
+                }
+                
+//                NavigationLink(destination: Home()) {
+//                    Text("Back").frame(width:45, height: 15)
+//                    .font(.system(size: 18))
+//                    .padding()
+//                    .overlay(
+//                        RoundedRectangle(cornerRadius: 10)
+//                            .stroke(Color.purple
+//                                , lineWidth: 2))
+//                }
+                
                 TextField("songURI", text: $songURI)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 
@@ -93,6 +114,12 @@ struct PlayingView: View {
         }
     }
     
+    func goHome() {
+        if let window = UIApplication.shared.windows.first {
+            window.rootViewController = UIHostingController(rootView: Home().environmentObject(UserData()))
+            window.makeKeyAndVisible()
+        }
+    }
 }
 
 struct PlayingView_Previews: PreviewProvider {

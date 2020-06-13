@@ -137,23 +137,23 @@ struct bottomView : View {
         
         VStack{
             
-            Button(action: {
-                SpotifyAuthentication.shared.sessionManagerInitiateSession()
-                
-                if let window = UIApplication.shared.windows.first {
-                    window.rootViewController = UIHostingController(rootView: AppView())
-                    window.makeKeyAndVisible()
-                }
-                
-            }) {
-                Text(" Spotify ")
-                    .foregroundColor(Color.purple)
-                    .padding()
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 15, style: .continuous)
-                        .stroke(Color.purple, style: StrokeStyle(lineWidth: 2))
-                    )
-            }
+//            Button(action: {
+//                SpotifyAuthentication.shared.sessionManagerInitiateSession()
+//
+//                if let window = UIApplication.shared.windows.first {
+//                    window.rootViewController = UIHostingController(rootView: AppView())
+//                    window.makeKeyAndVisible()
+//                }
+//
+//            }) {
+//                Text(" Spotify ")
+//                    .foregroundColor(Color.purple)
+//                    .padding()
+//                    .overlay(
+//                        RoundedRectangle(cornerRadius: 15, style: .continuous)
+//                        .stroke(Color.purple, style: StrokeStyle(lineWidth: 2))
+//                    )
+//            }.padding()
             
             Text("(or)").foregroundColor(Color.gray.opacity(0.5)).padding(.top, 20)
             
@@ -380,6 +380,34 @@ struct Home: View {
                     
                     Alert(title: Text("Please Enable Location Access In Settings!"))
                 }
+                
+                Button(action: {
+                    SpotifyAuthentication.shared.sessionManagerInitiateSession()
+                    
+                    if let window = UIApplication.shared.windows.first {
+                        window.rootViewController = UIHostingController(rootView: AppView())
+                        window.makeKeyAndVisible()
+                    }
+                }) {
+                    Text(" Spotify ")
+                        .foregroundColor(Color.purple)
+                        .padding()
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 15, style: .continuous)
+                            .stroke(Color.purple, style: StrokeStyle(lineWidth: 2))
+                        )
+                }.padding()
+
+                
+//                NavigationLink(destination: AppView()) {
+//                    Text(" Spotify ")
+//                    .foregroundColor(Color.purple)
+//                    .padding()
+//                    .overlay(
+//                        RoundedRectangle(cornerRadius: 15, style: .continuous)
+//                        .stroke(Color.purple, style: StrokeStyle(lineWidth: 2))
+//                    )
+//                }
                 
                 HStack{
                     

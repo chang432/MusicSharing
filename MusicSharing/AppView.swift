@@ -10,19 +10,21 @@ import SwiftUI
 
 struct AppView: View {
     var body: some View {
+        
         TabView {
+            
             PlayingView(songURI: "spotify:track:349Wc5mDu52d4Uv8Eg9WZv")
                 .tabItem() {
                     Image(systemName: "square.and.pencil")
                     Text("Now Playing")
-                }
+            }.padding()
             
             TopSongs()
                 .tabItem() {
                     Image(systemName: "list.dash")
                     Text("My Songs")
                 }
-        }
+        }.padding()
     }
 }
 
