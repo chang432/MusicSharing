@@ -26,7 +26,6 @@
 		125F30B12481A4F200716DCF /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F30B02481A4F200716DCF /* UserData.swift */; };
 		1271B102248F423B00665D8F /* ProfileListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1271B101248F423B00665D8F /* ProfileListViewModel.swift */; };
 		6D81FBBC2493FDC60000CC52 /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D81FBBB2493FDC60000CC52 /* SpotifyiOS.framework */; };
-		6D81FBC0249401B30000CC52 /* TopSongs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D81FBBF249401B20000CC52 /* TopSongs.swift */; };
 		6DB23A8D2492BD36005BF22F /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB23A8C2492BD36005BF22F /* Song.swift */; };
 		6DB23A8F2492BD4D005BF22F /* TopTracksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB23A8E2492BD4D005BF22F /* TopTracksResponse.swift */; };
 		6DB23A912492BD6B005BF22F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB23A902492BD6B005BF22F /* User.swift */; };
@@ -35,7 +34,6 @@
 		6DB23A972492BD90005BF22F /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB23A962492BD90005BF22F /* AppView.swift */; };
 		80401131AD91C32FD998595B /* Pods_MusicSharing_MusicSharingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BCFA5E5A3E2B3F2B2B3830D /* Pods_MusicSharing_MusicSharingUITests.framework */; };
 		CC914C47103E870727FFA471 /* Pods_MusicSharingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1CF78CF6475CA22B2BC7EA4 /* Pods_MusicSharingTests.framework */; };
-		FB5E5A20C75704665F5032CD /* Pods_MusicSharing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C50A8A3C9626573A4152AE33 /* Pods_MusicSharing.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +85,6 @@
 		6780E1EAB7D2E243F34CBFD9 /* Pods-Login_v1-Login_v1UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login_v1-Login_v1UITests.debug.xcconfig"; path = "Target Support Files/Pods-Login_v1-Login_v1UITests/Pods-Login_v1-Login_v1UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6D0DBC512492CB32001F4C33 /* MusicSharing-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MusicSharing-Bridging-Header.h"; sourceTree = "<group>"; };
 		6D81FBBB2493FDC60000CC52 /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyiOS.framework; sourceTree = "<group>"; };
-		6D81FBBF249401B20000CC52 /* TopSongs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopSongs.swift; sourceTree = "<group>"; };
 		6DB23A8C2492BD36005BF22F /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		6DB23A8E2492BD4D005BF22F /* TopTracksResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTracksResponse.swift; sourceTree = "<group>"; };
 		6DB23A902492BD6B005BF22F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -112,7 +109,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D81FBBC2493FDC60000CC52 /* SpotifyiOS.framework in Frameworks */,
-				FB5E5A20C75704665F5032CD /* Pods_MusicSharing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,7 +167,6 @@
 				125F30A424805C9400716DCF /* ProfileListView.swift */,
 				6DB23A962492BD90005BF22F /* AppView.swift */,
 				6DB23A942492BD8A005BF22F /* PlayingView.swift */,
-				6D81FBBF249401B20000CC52 /* TopSongs.swift */,
 				125F30652478E6DC00716DCF /* Assets.xcassets */,
 				125F306A2478E6DC00716DCF /* LaunchScreen.storyboard */,
 				125F306D2478E6DC00716DCF /* Info.plist */,
@@ -565,7 +560,6 @@
 				1271B102248F423B00665D8F /* ProfileListViewModel.swift in Sources */,
 				6DB23A912492BD6B005BF22F /* User.swift in Sources */,
 				125F30A524805C9400716DCF /* ProfileListView.swift in Sources */,
-				6D81FBC0249401B30000CC52 /* TopSongs.swift in Sources */,
 				125F30A12480580E00716DCF /* ProfileViewModel.swift in Sources */,
 				125F30A82480677D00716DCF /* TaskRepository.swift in Sources */,
 				6DB23A952492BD8A005BF22F /* PlayingView.swift in Sources */,
@@ -741,7 +735,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MusicSharing/Preview Content\"";
-				DEVELOPMENT_TEAM = YBHE65Z2MU;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -783,7 +776,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jasonidentifier.Login-v1";
 				PRODUCT_NAME = MusicSharing;
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/andrechang/Desktop/MusicSharing-master/MusicSharing/MusicSharing-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -797,7 +790,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MusicSharing/Preview Content\"";
-				DEVELOPMENT_TEAM = YBHE65Z2MU;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -839,7 +831,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jasonidentifier.Login-v1";
 				PRODUCT_NAME = MusicSharing;
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/andrechang/Desktop/MusicSharing-master/MusicSharing/MusicSharing-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";

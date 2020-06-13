@@ -783,7 +783,11 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jasonidentifier.Login-v1";
 				PRODUCT_NAME = MusicSharing;
+<<<<<<< HEAD
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+=======
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
+>>>>>>> 41eb3a664c809d7ed379968f7a8da1b6b9087e26
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -839,7 +843,11 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jasonidentifier.Login-v1";
 				PRODUCT_NAME = MusicSharing;
+<<<<<<< HEAD
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+=======
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
+>>>>>>> 41eb3a664c809d7ed379968f7a8da1b6b9087e26
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";

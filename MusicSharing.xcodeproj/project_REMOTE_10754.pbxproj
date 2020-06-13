@@ -35,7 +35,6 @@
 		6DB23A972492BD90005BF22F /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB23A962492BD90005BF22F /* AppView.swift */; };
 		80401131AD91C32FD998595B /* Pods_MusicSharing_MusicSharingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BCFA5E5A3E2B3F2B2B3830D /* Pods_MusicSharing_MusicSharingUITests.framework */; };
 		CC914C47103E870727FFA471 /* Pods_MusicSharingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1CF78CF6475CA22B2BC7EA4 /* Pods_MusicSharingTests.framework */; };
-		FB5E5A20C75704665F5032CD /* Pods_MusicSharing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C50A8A3C9626573A4152AE33 /* Pods_MusicSharing.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,7 +111,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D81FBBC2493FDC60000CC52 /* SpotifyiOS.framework in Frameworks */,
-				FB5E5A20C75704665F5032CD /* Pods_MusicSharing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
