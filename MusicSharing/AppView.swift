@@ -17,11 +17,11 @@ struct AppView: View {
                     Text("Now Playing")
                 }
             
-            /*TopSongs()
+            TopSongs()
                 .tabItem() {
                     Image(systemName: "list.dash")
                     Text("My Songs")
-                }*/
+                }
         }
     }
 }

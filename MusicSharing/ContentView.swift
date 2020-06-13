@@ -136,7 +136,23 @@ struct bottomView : View {
         
         VStack{
             
-            
+            Button(action: {
+                SpotifyAuthentication.shared.sessionManagerInitiateSession()
+                
+                if let window = UIApplication.shared.windows.first {
+                    window.rootViewController = UIHostingController(rootView: AppView())
+                    window.makeKeyAndVisible()
+                }
+                
+            }) {
+                Text(" Spotify ")
+                    .foregroundColor(Color.purple)
+                    .padding()
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 15, style: .continuous)
+                        .stroke(Color.purple, style: StrokeStyle(lineWidth: 2))
+                    )
+            }
             
             Text("(or)").foregroundColor(Color.gray.opacity(0.5)).padding(.top, 20)
             
