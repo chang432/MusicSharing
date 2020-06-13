@@ -778,7 +778,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jasonidentifier.Login-v1";
 				PRODUCT_NAME = MusicSharing;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jasonlkc/Documents/R&D/SwiftUI_tutorials/Login_v1/MusicSharing/MusicSharing-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -833,7 +833,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jasonidentifier.Login-v1";
 				PRODUCT_NAME = MusicSharing;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jasonlkc/Documents/R&D/SwiftUI_tutorials/Login_v1/MusicSharing/MusicSharing-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
