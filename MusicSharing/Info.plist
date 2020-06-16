@@ -28,7 +28,16 @@
 				<string>com.googleusercontent.apps.881484184716-4lkep8p1i7mdcc71jpntt7a1dkvgrrrr</string>
 			</array>
 		</dict>
-		<dict/>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>jasonidentifier.Login-v1</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fuckthis</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
