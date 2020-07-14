@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		123C06D624A0228E00EFC90F /* ProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123C06D524A0228E00EFC90F /* ProfilePicture.swift */; };
 		125F30602478E6DA00716DCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F305F2478E6DA00716DCF /* AppDelegate.swift */; };
 		125F30622478E6DA00716DCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F30612478E6DA00716DCF /* SceneDelegate.swift */; };
 		125F30642478E6DA00716DCF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F30632478E6DA00716DCF /* ContentView.swift */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		123C06D524A0228E00EFC90F /* ProfilePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePicture.swift; sourceTree = "<group>"; };
 		125F305C2478E6DA00716DCF /* MusicSharing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicSharing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		125F305F2478E6DA00716DCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		125F30612478E6DA00716DCF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				125F309D247F14D700716DCF /* Profile.swift */,
 				6DB23A902492BD6B005BF22F /* User.swift */,
 				125F30B02481A4F200716DCF /* UserData.swift */,
+				123C06D524A0228E00EFC90F /* ProfilePicture.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -565,6 +568,7 @@
 				1271B102248F423B00665D8F /* ProfileListViewModel.swift in Sources */,
 				6DB23A912492BD6B005BF22F /* User.swift in Sources */,
 				125F30A524805C9400716DCF /* ProfileListView.swift in Sources */,
+				123C06D624A0228E00EFC90F /* ProfilePicture.swift in Sources */,
 				6D81FBC0249401B30000CC52 /* TopSongs.swift in Sources */,
 				125F30A12480580E00716DCF /* ProfileViewModel.swift in Sources */,
 				125F30A82480677D00716DCF /* TaskRepository.swift in Sources */,

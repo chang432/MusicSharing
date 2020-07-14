@@ -11,14 +11,20 @@ import SwiftUI
 struct PersonalProfileHost: View {
     @Environment(\.editMode) var mode
     @EnvironmentObject var userData: UserData
-     
+    
     @ObservedObject private var viewModel = ProfileViewModel()
     
     @State var draftProfile = Profile.default
-
+    @State var profilepic = Image(systemName: "person")
+//    @State var inputImage: UIImage?
+//    @State var image: Image?
+    
+    class ProfilePic: ObservableObject {
+        @Published var profilepic = Image(systemName: "person")
+    }
+    
     var body: some View {
-        //self.viewModel.fetchData()
-        //self.userData.profile = viewModel.profiles[1]?
+        
         
         VStack(alignment: .leading, spacing: 20) {
             
@@ -36,7 +42,7 @@ struct PersonalProfileHost: View {
                 EditButton()
             }
             if self.mode?.wrappedValue == .inactive {
-                PersonalProfileSummary(personalProfile: userData.profile).onAppear {
+                PersonalProfileSummary(personalProfile: userData.profile, profilepic: $profilepic).onAppear {
                     self.viewModel.fetchData()
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // Change `2.0` to the desired number of seconds.
@@ -52,11 +58,11 @@ struct PersonalProfileHost: View {
                     print("profiles count: \(self.viewModel.profiles.count)")
                 }
             } else {
-                PersonalProfileEditor(personalProfile: $draftProfile)
+                PersonalProfileEditor(personalProfile: $draftProfile, profilepic2: $profilepic)
                     .onAppear {
                         self.viewModel.fetchData()
                         
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // Change `2.0` to the desired number of seconds.
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { // Change `2.0` to the desired number of seconds.
                             // Code you want to be delayed
                             
                             if !(self.viewModel.profiles.first?.username.isEmpty ?? true) {
@@ -84,8 +90,14 @@ struct PersonalProfileHost: View {
                 }
             
             }
+
         }.padding()
     }
+    
+//    func loadImage() {
+//        guard let inputImage = inputImage else { return }
+//        image = Image(uiImage: inputImage)
+//    }
 }
 
 struct PersonalProfileHost_Previews: PreviewProvider {

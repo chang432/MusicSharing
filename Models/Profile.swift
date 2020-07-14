@@ -20,7 +20,8 @@ struct Profile: Codable, Identifiable {
     var favsong3: String
     @ServerTimestamp var createdTime: Timestamp?
     var userId: String?
-
+    //var userPicURL: String?
+    //var userPic: Image = Image(systemName: "person")
     
     static let `default` = Self(username: "defaultUser", gender: "gender", favsong1: "fav1", favsong2: "fav2", favsong3: "fav3")
     init(username: String, gender: String, favsong1: String, favsong2: String, favsong3: String) {

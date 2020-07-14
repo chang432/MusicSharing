@@ -530,10 +530,18 @@ struct MapView: UIViewRepresentable {
             }
         }
     }
-//
+
 //    struct imagePicker : UIViewControllerRepresentable {
-//
-//        func makeUIViewController(context: UIViewControllerRepresentable<imagePicker>) -> UIImagePickerController {
+//        
+//        func makeCoordinator() -> imagePicker.Coordinator {
+//            return imagePicker.Coordinator(parent1: self)
+//        }
+//        
+//        @Binding var shown : Bool
+//        @Binding var data : Data
+//        
+//        func makeUIViewController(context: UIViewControllerRepresentableContext<imagePicker>) -> UIImagePickerController {
+//            
 //            let imagepic = UIImagePickerController()
 //            imagepic.sourceType = .photoLibrary
 //            return imagepic
@@ -541,6 +549,23 @@ struct MapView: UIViewRepresentable {
 //
 //        func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<imagePicker>) {
 //
+//        }
+//        
+//        class Coordinator : NSObject,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+//            
+//            var parent : imagePicker!
+//            init(parent1 : imagePicker) {
+//                parent = parent1
+//            }
+//            
+//            func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+//                parent.shown.toggle()
+//            }
+//            
+//            func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//                let image = info[.originalImage] as! UIImage
+//                parent.data = image.jpegData(compressionQuality: 0.35)!
+//            }
 //        }
 //
 //    }

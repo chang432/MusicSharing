@@ -95,8 +95,10 @@ class ProfileViewModel : ObservableObject {
             //do {
                 var updatedProfile = profile
                 updatedProfile.userId = Auth.auth().currentUser?.uid
+                print(Auth.auth().currentUser!.uid)
                 db.collection("Profiles").whereField("userId", isEqualTo: Auth.auth().currentUser?.uid).getDocuments{
                     (querySnapshot, error) in
+                    print("still ok")
                     guard let Udocuments = querySnapshot?.documents else {
                         print("No documents")
                         return

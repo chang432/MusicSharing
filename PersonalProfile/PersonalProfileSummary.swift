@@ -10,12 +10,15 @@ import SwiftUI
 
 struct PersonalProfileSummary: View {
     var personalProfile: Profile
+    @Binding var profilepic: Image
+    //@State var image: Image?
     
     var body: some View {
         List{
             
             HStack {
-                Image(systemName: "person").resizable().frame(width: 80, height: 80)
+                //Image(systemName: "person").resizable().frame(width: 80, height: 80)
+                profilepic.resizable().frame(width: 80, height: 80)
                 
                 Text(personalProfile.username)
                     .bold()
@@ -38,7 +41,7 @@ struct PersonalProfileSummary: View {
 
 struct PersonalProfileSummary_Previews: PreviewProvider {
     static var previews: some View {
-        PersonalProfileSummary(personalProfile: Profile.default)
+        PersonalProfileSummary(personalProfile: Profile.default, profilepic: .constant(Image(systemName: "star.fill")))
     }
 }
 
